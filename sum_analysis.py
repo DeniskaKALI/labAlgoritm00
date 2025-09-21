@@ -52,10 +52,10 @@ def measure_time(func, data, repeats=10):
 def system_info():
     pc_info = """ 
 Характеристики ПК для тестирования:
-- Процессор: Intel Core i7-10750H @ 2.60GHz
-- Оперативная память: 16 GB DDR4
+- Процессор: Intel Core i5-1135G7 @ 2.40GHz
+- Оперативная память: 8 GB DDR4
 - ОС: Windows 11
-- Python: 3.9.7
+- Python: 3.11.6
 """
     print(pc_info)
 
@@ -65,8 +65,11 @@ def system_info():
 def main():
     system_info()
 
-    print("=== Простая задача: сумма двух чисел ===")
-    calculate_sum()
+    print("=== Чтение чисел из файла и вычисление суммы ===")
+    # Создаём пример файла input.txt
+    with open("input.txt", "w") as f:  # O(1)
+        f.write("123\n456\n")  # O(1)
+    calculate_sum_from_file("input.txt")
 
     print("\n=== Усложнённая задача: суммирование массива ===")
     sizes = [1000, 5000, 10000, 50000, 100000, 500000]

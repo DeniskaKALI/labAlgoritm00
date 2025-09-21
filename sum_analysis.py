@@ -67,9 +67,9 @@ def main():
 
     print("=== Чтение чисел из файла и вычисление суммы ===")
     # Создаём пример файла input.txt
-    with open("input.txt", "w") as f:  # O(1)
+    with open(".venv/input.txt", "w") as f:  # O(1)
         f.write("123\n456\n")  # O(1)
-    calculate_sum_from_file("input.txt")
+    calculate_sum_from_file(".venv/input.txt")
 
     print("\n=== Усложнённая задача: суммирование массива ===")
     sizes = [1000, 5000, 10000, 50000, 100000, 500000]
